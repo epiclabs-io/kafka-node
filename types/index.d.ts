@@ -203,6 +203,7 @@ export interface ZKOptions {
   sessionTimeout?: number;
   spinDelay?: number;
   retries?: number;
+  preferredListenerName?: string;
 }
 
 export interface ProduceRequest {
