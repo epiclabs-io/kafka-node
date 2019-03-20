@@ -1,6 +1,6 @@
 {
-  "name": "kafka-node",
-  "description": "Client for Apache Kafka v0.8.1+, v0.9.x, and v0.10.x",
+  "name": "epic-kafka-node",
+  "description": "Client for Apache Kafka v0.8.1+, v0.9.x, and v0.10.x. Refurbished by Epic",
   "keywords": [
     "kafka",
     "zookeeper",
@@ -14,8 +14,8 @@
     "lib",
     "types"
   ],
-  "bugs": "https://github.com/SOHU-co/kafka-node/issues",
-  "version": "3.0.1",
+  "bugs": "https://github.com/epiclabs-io/kafka-node/issues",
+  "version": "3.0.1.1",
   "main": "kafka.js",
   "types": "types/index.d.ts",
   "license": "MIT",
@@ -68,7 +68,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/SOHU-Co/kafka-node.git"
+    "url": "https://github.com/epiclabs-io/kafka-node.git"
   },
   "scripts": {
     "test:ts": "tslint --project ./types/tsconfig.json --config ./types/tslint.json && tsc --project types",
