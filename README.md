@@ -1,14 +1,11 @@
 Kafka-node
 ==========
 
-[![Build Status](https://travis-ci.org/SOHU-Co/kafka-node.svg?branch=master)](https://travis-ci.org/SOHU-Co/kafka-node)
-[![Coverage Status](https://coveralls.io/repos/github/SOHU-Co/kafka-node/badge.svg?branch=master)](https://coveralls.io/github/SOHU-Co/kafka-node?branch=master)
+<!--[![Build Status](https://travis-ci.org/SOHU-Co/kafka-node.svg?branch=master)](https://travis-ci.org/SOHU-Co/kafka-node)-->
+<!--[![Coverage Status](https://coveralls.io/repos/github/SOHU-Co/kafka-node/badge.svg?branch=master)](https://coveralls.io/github/SOHU-Co/kafka-node?branch=master)-->
 
-[![NPM](https://nodei.co/npm/kafka-node.png)](https://nodei.co/npm/kafka-node/)
-<!--[![NPM](https://nodei.co/npm-dl/kafka-node.png?height=3)](https://nodei.co/npm/kafka-node/)-->
-
-
-Kafka-node is a Node.js client with Zookeeper integration for Apache Kafka 0.8.1 and later.
+Kafka-node is a Node.js client with Zookeeper integration for Apache Kafka 0.8.1 and later. At [Epiclabs](https://www.epiclabs.io) we branch it out from version 3.0.1
+to fix a known issue with [Listeners](https://github.com/SOHU-Co/kafka-node/issues/859). See section Client for new configuration.
 
 # Table of Contents
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
@@ -108,6 +105,7 @@ const client = new kafka.KafkaClient({kafkaHost: '10.3.100.196:9092'});
 * `connectionString`: Zookeeper connection string, default `localhost:2181/`
 * `clientId`: This is a user-supplied identifier for the client application, default `kafka-node-client`
 * `zkOptions`: **Object**, Zookeeper options, see [node-zookeeper-client](https://github.com/alexguan/node-zookeeper-client#client-createclientconnectionstring-options)
+    * As a workaround, if you add **preferredListenerName** as an option in zkOptions, that listener will be used. This option only works with connectionString when using zookeeper.
 * `noAckBatchOptions`: **Object**, when requireAcks is disabled on Producer side we can define the batch properties, 'noAckBatchSize' in bytes and 'noAckBatchAge' in milliseconds. The default value is `{ noAckBatchSize: null, noAckBatchAge: null }` and it acts as if there was no batch
 * `sslOptions`: **Object**, options to be passed to the tls broker sockets, ex. { rejectUnauthorized: false } (Kafka +0.9)
 
